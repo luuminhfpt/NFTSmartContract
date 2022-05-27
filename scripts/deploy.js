@@ -7,6 +7,7 @@ async function main() {
   await cactus.deployed();
   console.log("CmCactusNaive deployed to:", cactus.address);
 
+  // opensea matadata uri
   await cactus.mint("https://ipfs.io/ipfs/QmVb4cUioXVyEZyBd4uVkhusaE6ykuNhvMHAHMs6PC6ti7");
   console.log("NFT successfuly minted");
 }

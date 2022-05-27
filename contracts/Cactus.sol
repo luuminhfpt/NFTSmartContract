@@ -9,6 +9,7 @@ contract Cactus is ERC721URIStorage {
     using Counters for Counters.Counter;
     Counters.Counter private _tokenIds;
 
+    // Token name and symbol
     constructor() ERC721("CmCactusNaive", "CCN") {}
 
     function mint(string memory tokenURI)
@@ -16,7 +17,11 @@ contract Cactus is ERC721URIStorage {
         returns (uint256)
     {
         uint256 newItemId = _tokenIds.current();
+        
+        // mint to sender address
         _mint(msg.sender, newItemId);
+
+        // url which opensea can get metadata json
         _setTokenURI(newItemId, tokenURI);
 
         _tokenIds.increment();
